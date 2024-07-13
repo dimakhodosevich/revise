@@ -1,6 +1,6 @@
 package org.example;
 
-public class Dog {
+public class Dog implements Pet{
 
 
 
@@ -32,6 +32,8 @@ public class Dog {
         this.age = age;
     }
 
+
+    @Override
     public void say(){
         System.out.println("Bow Bow");
     }
