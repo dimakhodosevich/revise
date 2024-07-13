@@ -2,23 +2,27 @@ package org.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+
 
 public class Person {
 
 
     private Pet pet;
+
+    @Value("20")
     private int age;
+    @Value("Dima")
     private String owner;
 
-    @Autowired
 
-    public Person(@Qualifier("dog") Pet pet) {
+
+    public Person(Pet pet) {
         this.pet = pet;
     }
 
@@ -45,12 +49,12 @@ public class Person {
         this.owner = owner;
     }
 
-    @PostConstruct
+
     public void initMethod(){
         System.out.println("Подключение ресурсов");
     }
 
-    @PreDestroy
+
     public void destroyMethod(){
         System.out.println("Отключение ресурсов");
     }

@@ -19,6 +19,7 @@ public class App {
 
         Person p = context.getBean("person", Person.class);
         p.callPet();
+        System.out.println(p.getOwner());
 
         Dog dog = context.getBean(Dog.class);
         Cat cat = context.getBean(Cat.class);
