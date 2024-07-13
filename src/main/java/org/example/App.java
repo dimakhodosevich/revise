@@ -13,7 +13,7 @@ import javax.xml.validation.Validator;
  */
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         Person person = context.getBean(Person.class);
 
@@ -21,7 +21,7 @@ public class App {
         System.out.println(person.getOwner());
         System.out.println(person.getAge());
 
-
+            context.close();
 
     }
 }

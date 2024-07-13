@@ -31,7 +31,8 @@
 
 
     <!-- 5 способ создания объекта  -->
-    <bean id="dog" class="org.example.Dog" scope="prototype">
+    <bean id="dog" class="org.example.Dog" scope="prototype"
+    >
         <property name="name" value="${d.name}"></property>
         <property name="age" value="${d.age}"></property>
     </bean>

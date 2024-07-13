@@ -37,6 +37,14 @@ public class Person {
         this.owner = owner;
     }
 
+    public void initMethod(){
+        System.out.println("Подключение ресурсов");
+    }
+
+    public void destroyMethod(){
+        System.out.println("Отключение ресурсов");
+    }
+
     public void callPet(){
         System.out.println("Hey hey, come here!!!");
         pet.say();

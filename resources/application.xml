@@ -8,20 +8,23 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
 
+    <context:property-placeholder location="classpath*:data.properties"/>
 
     <bean name="dog" class="org.example.Dog" scope="prototype">
         <property name="name" value="Baykal"/>
         <property name="age" value="3"/>
     </bean>
 
-<!--    <bean name="Person" class="org.example.Person">-->
-<!--           <property name="pet" ref="dog" />-->
-<!--    </bean>-->
+    <!--    <bean name="Person" class="org.example.Person">-->
+    <!--           <property name="pet" ref="dog" />-->
+    <!--    </bean>-->
 
-    <bean name="Person" class="org.example.Person">
-        <constructor-arg name="pet" ref="dog" />
-        <property name="age" value="29"/>
-        <property name="owner" value="Khodosevich Dima"/>
+    <bean name="Person" class="org.example.Person"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+        <constructor-arg name="pet" ref="dog"/>
+        <property name="age" value="${d.age}"/>
+        <property name="owner" value="${d.name}"/>
     </bean>
 
 

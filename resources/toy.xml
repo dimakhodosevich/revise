@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root xmlns="http://d.com/example/toy"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://d.com/example/toy toy.xsd"
+>
+
+    <toy id="1">
+        <name>Dima</name>
+        <age>29</age>
+    </toy>
+
+    <toy id="2">
+        <name>Dima</name>
+        <age>29</age>
+    </toy>
+
+
+</root>
