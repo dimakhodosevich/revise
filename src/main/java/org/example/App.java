@@ -13,13 +13,12 @@ import javax.xml.validation.Validator;
  */
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("pet.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
+        Person person = context.getBean(Person.class);
 
-        Dog dog  = context.getBean(Dog.class);
-        System.out.println(dog.age);
-        System.out.println(dog.name);
-        dog.say();
+        person.callPet();
+
 
 
     }

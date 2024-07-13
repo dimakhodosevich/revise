@@ -8,15 +8,18 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <!-- 1 способ создания объекта  -->
-<!--    <bean id="dog" class="org.example.Dog" scope="prototype">-->
-<!--        <constructor-arg value="Rex"/>-->
-<!--        <constructor-arg value="3"/>-->
-<!--    </bean>-->
 
     <bean name="dog" class="org.example.Dog" scope="prototype">
         <property name="name" value="Baykal"/>
         <property name="age" value="3"/>
+    </bean>
+
+<!--    <bean name="Person" class="org.example.Person">-->
+<!--           <property name="pet" ref="dog" />-->
+<!--    </bean>-->
+
+    <bean name="Person" class="org.example.Person">
+        <constructor-arg name="pet" ref="dog" />
     </bean>
 
 
