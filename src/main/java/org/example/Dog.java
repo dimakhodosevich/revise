@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Dog implements Pet {
 
-    @Value("${d.name}")
+//    @Value("${d.name}")
     String name;
-    @Value("${d.age}")
+//    @Value("${d.age}")
     int age;
 
     public Dog() {

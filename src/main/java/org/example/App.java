@@ -1,6 +1,7 @@
 package org.example;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Errors;
@@ -13,15 +14,20 @@ import javax.xml.validation.Validator;
  */
 public class App {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("xmlConfig.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
+
 
         Person p = context.getBean("person", Person.class);
         p.callPet();
 
-        Dog dog = (Dog)p.getPet();
-        System.out.println(dog.age);
-        System.out.println(dog.name);
-            context.close();
+        Dog dog = context.getBean(Dog.class);
+        Cat cat = context.getBean(Cat.class);
+        Bear bear = context.getBean(Bear.class);
+        dog.say();
+        cat.say();
+        bear.say();
+
+
 
     }
 }
