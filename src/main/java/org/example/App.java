@@ -18,6 +18,8 @@ public class App {
         Person person = context.getBean(Person.class);
 
         person.callPet();
+        System.out.println(person.getOwner());
+        System.out.println(person.getAge());
 
 
 

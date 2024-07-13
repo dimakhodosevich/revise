@@ -20,6 +20,8 @@
 
     <bean name="Person" class="org.example.Person">
         <constructor-arg name="pet" ref="dog" />
+        <property name="age" value="29"/>
+        <property name="owner" value="Khodosevich Dima"/>
     </bean>
 
 
