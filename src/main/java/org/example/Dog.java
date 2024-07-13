@@ -1,11 +1,16 @@
 package org.example;
 
-public class Dog implements Pet{
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
+public class Dog implements Pet {
 
-
-
+    @Value("${d.name}")
     String name;
+    @Value("${d.age}")
     int age;
 
     public Dog() {
@@ -33,8 +38,10 @@ public class Dog implements Pet{
     }
 
 
+
+
     @Override
-    public void say(){
+    public void say() {
         System.out.println("Bow Bow");
     }
 }
